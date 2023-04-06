@@ -27,7 +27,7 @@ IPAddress ip1(192,168,1,1);
 IPAddress ip2(192,168,1,2);
 IPAddress ip3(192,168,1,3);
 
-unsigned long next,next250 = millis();
+unsigned long next = millis();
 
 //PZEM004T pzem(14,12);  //SoftwareSerial(receivePin, transmitPin);
 
@@ -83,38 +83,22 @@ void loop() {
    switch (Ncycle) {
       case 1:
     v1 = pzem1.voltage(ip1);
-//    Serial.printf("Case number1 F1 Voltage :%.2fV\n",v1);
-    break;
+    v2 = pzem2.voltage(ip2);
+    v3 = pzem3.voltage(ip3);
+      break;
       case 2:
-     i1 = pzem1.current(ip1);
-//     Serial.printf("Case number2 F1 Current :%.2fA\n",i1);
-     break;
+      i1 = pzem1.current(ip1);
+      i2 = pzem2.current(ip2);
+      i3 = pzem3.current(ip3);
+        break;
       case 3:
        p1 = pzem1.power(ip1);
-       break;
+       p2 = pzem2.power(ip2);
+       p3 = pzem3.power(ip3);
+        break;
        case 4:
          e1= pzem1.energy(ip1);
-         break;
-  case 5:        
-    v2 = pzem2.voltage(ip2);
-    break;
-  case 6:  
-     i2 = pzem2.current(ip2);
-     break;
-  case 7: 
-       p2 = pzem2.power(ip2);
-       break;
-  case 8:     
-        e2= pzem2.energy(ip2);
-        break;
-  case 9:    
-    v3 = pzem3.voltage(ip3);
-    break;
-     i3 = pzem3.current(ip3);
-  case 10:   
-       p3 = pzem3.power(ip3);
-       break;
-  case 11:
+         e2= pzem2.energy(ip2);
          e3= pzem3.energy(ip3); 
          break;
 default:
