@@ -6,7 +6,11 @@ The module reads 4 values from 3 PZEM module (1 per phase) for voltage,Current,P
 These module are quite slow , they could respond not often than 1 time per second , doesn't matter what parameter .
 Therefore you need at least 12 second for quering 12 parameters .
 Works with 3 different Software Serial ports :
+
 PZEM004T pzem1(4, 5);    //D1,D2  Wemos D1 Mini              L1
+
 PZEM004T pzem2(2, 0);    //D4,D3                             L2
+
 PZEM004T pzem3(12, 14);  //D5,D6                             L3 
-It's possible to work over one port , but this configuration turns to be more reliable at data reading.
+
+It's possible to work over one port , but this configuration turns to be more reliable with data reading.
